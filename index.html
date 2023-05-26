@@ -2,136 +2,136 @@
 <html lang="en" data-theme="cmyk">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TypeScript</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.13.5/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.13.5/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        .btn-report {
+            padding-left: 42%;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
-    <p class="text-center uppercase font-bold my-4">
-      Registro del <span class="text-primary">Estudiante</span>
-    </p>
-    <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
-      <p>Cédula:</p>
-      <input class="input input-primary" type="text" id="student_dni" />
-      <p>Nombre Completo:</p>
-      <input class="input input-primary" type="text" id="student_fullname" />
-      <p>Nivel:</p>
-      <input class="input input-primary" type="text" id="student_level" />
-      <button class="btn btn-primary" onclick="addStudent()">Guardar</button>
+    <br>
+    <!-- FORMULARIO DE ESTUDIATES -->
+    <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
+        <p class="text-center uppercase font-bold my-4">Registro del <span class="text-secondary">Estudiante</span></p>
+        <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
+            <p>Cédula de identidad:</p>
+            <input class="input input-primary" type="text" id="student_dni">
+            <p>Nombre Completo:</p>
+            <input class="input input-primary" type="text" id="student_fullname">
+            <p>Nivel:</p>
+            <input class="input input-primary" type="text" id="student_level">
+            <button class="btn btn-success" onclick="addStudent()">Guardar</button>
+        </div>
     </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
-    <p class="text-center uppercase font-bold my-4">
-      Registro del <span class="text-primary">Docente</span>
-    </p>
-    <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
-      <p>Cédula:</p>
-      <input class="input input-primary" type="text" id="teacher_dni" />
-      <p>Nombre Completo:</p>
-      <input class="input input-primary" type="text" id="teacher_fullname" />
-      <p>Área:</p>
-      <select id="teacher_area" class="input input-primary">
-        <option value="Art">Arte Culinario</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Software">Software</option>
-      </select>
-      <button class="btn btn-primary" onclick="addTeacher()">Guardar</button>
+    <!-- SALTO DE LINEA -->
+    <div class="divider"></div>
+    <!-- FORMULARIO DE DOCENTES -->
+    <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
+        <p class="text-center uppercase font-bold my-4">Registro del <span class="text-secondary">Docente</span></p>
+        <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
+            <p>Número de cédula:</p>
+            <input class="input input-primary" type="text" id="teacher_dni">
+            <p>Nombre Completo:</p>
+            <input class="input input-primary" type="text" id="teacher_fullname">
+            <p>Seleccione un Área:</p>
+            <select id="teacher_area" class="input input-primary">
+                <option value="Art">Arte Culinario</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Software">Software</option>
+            </select>
+            <button class="btn btn-success" onclick="addTeacher()">Guardar</button>
+        </div>
     </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
-    <p class="text-center uppercase font-bold my-4">
-      Registro de la <span class="text-primary">Actividad</span>
-    </p>
-    <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
-      <p>Nombe:</p>
-      <input class="input input-primary" type="text" id="activity_name" />
-      <button class="btn btn-primary" onclick="addActivity()">Guardar</button>
+    <!-- SALTO DE LINEA -->
+    <div class="divider"></div>
+    <!-- FORMULARIO DE REGISTRO DE ACTIVIDAD -->
+    <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
+        <p class="text-center uppercase font-bold my-4">Registro de la <span class="text-secondary">Actividad</span></p>
+        <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
+            <p>Nombe:</p>
+            <input class="input input-primary" type="text" id="activity_name">
+            <button class="btn btn-success" onclick="addActivity()">Guardar</button>
+        </div>
     </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
-    <p class="text-center uppercase font-bold my-4">
-      Configuración del
-      <span class="text-primary">Libro de calificaciones </span>
-    </p>
-    <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
-      <p>Valor:</p>
-      <input class="input input-primary" type="text" id="gradebook_value" />
-      <p>Curso:</p>
-      <select id="gradebook_course" class="input input-primary"></select>
-      <p>Actividad:</p>
-      <select id="gradebook_activity" class="input input-primary"></select>
-      <p>Nota Máxima:</p>
-      <input type="number" id="gradebook_maximun_grade" class="input input-primary" />
-      <button class="btn btn-primary" onclick="addGradebookSetup()">
-        Guardar
-      </button>
+    <!-- SALTO DE LINEA -->
+    <div class="divider"></div>
+    <!-- LIBRO DE CALIFICACIONES -->
+    <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
+        <p class="text-center uppercase font-bold my-4">Configuración del <span class="text-secondary">Libro de
+                calificaciones </span></p>
+        <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
+            <p>Valor:</p>
+            <input class="input input-primary" type="text" id="gradebook_value">
+            <p>Seleccione un curso:</p>
+            <select id="gradebook_course" class="input input-primary">
+            </select>
+            <p>Selecciones una Actividad:</p>
+            <select id="gradebook_activity" class="input input-primary">
+            </select>
+            <p>Nota Máxima:</p>
+            <input type="number" id="gradebook_maximun_grade" class="input input-primary">
+            <button class="btn btn-success" onclick="addGradebookSetup()">Guardar</button>
+        </div>
     </div>
-  </div>
+    <!-- SALTO DE LINEA -->
+    <div class="divider"></div>
+    <!-- FORMULARIO REGISTRO DE ASIGNACION -->
+    <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
+        <p class="text-center uppercase font-bold my-4">Registro de la <span class="text-secondary">Asignacion </span>
+        </p>
+        <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
+            <p>Estudiante:</p>
+            <select id="assignment_student" class="input input-primary">
+            </select>
+            <p>Valor:</p>
+            <select id="assignment_gradebooksetup" class="input input-primary"></select>
+            <p>Nota:</p>
+            <input class="input input-primary" type="number" id="assignment_grade">
 
-  <div class="divider"></div>
-
-  <div class="max-w-2xl mx-auto rounded-lg shadow-2xl border-4">
-    <p class="text-center uppercase font-bold my-4">
-      Registro de la <span class="text-primary">Asignacion</span>
-    </p>
-    <div class="rounded-lg shadow-2xl border-4 grid grid-cols m-4 p-4 gap-4">
-      <p>Estudiate:</p>
-      <select id="assignment_student" class="input input-primary"></select>
-      <p>Libro de confiruracion:</p>
-      <select id="assignment_gradebooksetup" class="input input-primary"></select>
-      <p>calificaciones:</p>
-      <input class="input input-primary" type="text" id="assignment_grade" />
-      <button class="btn btn-primary" onclick="addAssignment()">
-        Guardar
-      </button>
+            <button class="btn btn-success" onclick="addAssignment()">Guardar</button>
+        </div>
     </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <hr />
-  <h2>REPORTE</h2>
-  <div>
-    <button class="btn btn-primary" onclick="generateReport()">Generar Reporte</button>
-  </div>
-  <table id="report">
-    <thead class=" table table-striped" style="border-radius: 2px sol">
-      <tr>
-        <th>Curso:</th>
-        <th>Nombre:</th>
-        <th>Nivel:</th>
-        <th>Actividad</th>
-        <th>Valor Actividad:</th>
-        <th>Calificacion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <td>
-
-      </td>
-    </tbody>
-    </tr>
-
-  </table>
-
-  <script>
-    let exports = {};
-  </script>
-  <script src="built/main.js"></script>
+    <!-- SALTO DE LINEA -->
+    <div class="divider"></div>
+    <!-- BOTON GENERAR REPORTES -->
+    <h2>REPORTE</h2>
+    <div class="btn-report">
+        <button class="btn btn-success" onclick="generateReport()">Generar Reporte</button>
+    </div>
+    <!-- TABLA DONDE SE GENERAN LOS REPORTES -->
+    <table id="report" class="table table-striped" style="border-radius: 2px solid rgb(117, 192, 221)">
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Nombre</th>
+                <th>Nivel</th>
+                <th>Actividad</th>
+                <th>Valor</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Scripts de TypeScrip -->
+    <script>let exports = {};</script>
+    <script src="built/main.js"></script>
 </body>
 
 </html>
